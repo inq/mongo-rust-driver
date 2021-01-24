@@ -21,7 +21,7 @@ exclude = [
 
 [features]
 default = ["tokio-runtime"]
-tokio-runtime = ["tokio/dns", "tokio/macros", "tokio/rt-core", "tokio/tcp", "tokio/rt-threaded", "tokio/time", "reqwest", "serde_bytes"]
+tokio-runtime = ["tokio/macros", "tokio/rt", "tokio/net", "tokio/rt-multi-thread", "tokio/time", "reqwest", "serde_bytes"]
 async-std-runtime = ["async-std", "async-std/attributes"]
 sync = ["async-std-runtime"]
 
@@ -65,13 +65,13 @@ version = "0.3.0"
 default-features = false
 
 [dependencies.reqwest]
-version = "0.10.6"
+version = "0.11"
 optional = true
 default-features = false
 features = ["json", "rustls-tls"]
 
 [dependencies.rustls]
-version = "0.17.0"
+version = "0.19.0"
 features = ["dangerous_configuration"]
 
 [dependencies.serde]
@@ -83,11 +83,11 @@ version = "0.11.5"
 optional = true
 
 [dependencies.tokio]
-version = "~0.2.18"
+version = "1.0.1"
 features = ["io-util", "sync", "macros"]
 
 [dependencies.tokio-rustls]
-version = "0.13.0"
+version = "0.22.0"
 features = ["dangerous_configuration"]
 
 [dependencies.uuid]
